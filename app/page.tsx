@@ -335,13 +335,6 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 md:pt-16">
             {[
               {
-                name: "Shad Boss",
-                role: "CEO, TechCorp",
-                quote:
-                  "This microSaaS has revolutionized our workflow. Highly recommended!",
-                img: "https://github.com/shadcn.png",
-              },
-              {
                 name: "Jane Smith",
                 role: "Freelancer",
                 quote:
@@ -367,14 +360,21 @@ export default function Home() {
                 role: "CEO, TechCorp",
                 quote:
                   "This microSaaS has revolutionized our workflow. Highly recommended!",
-                img: "https://avatar.iran.liara.run/public/boy",
+                img: "https://randomuser.me/api/portraits/men/42.jpg",
               },
               {
                 name: "Valentina Girl",
                 role: "Freelancer",
                 quote:
                   "I can't imagine working without this tool now. It's a game-changer.",
-                img: "https://avatar.iran.liara.run/public/girl",
+                img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+              },
+              {
+                name: "Shad Boss",
+                role: "CEO, TechCorp",
+                quote:
+                  "This microSaaS has revolutionized our workflow. Highly recommended!",
+                img: "https://github.com/shadcn.png",
               },
             ].map((testimonial, index) => (
               <Card key={index} className="transition hover:shadow-md">
