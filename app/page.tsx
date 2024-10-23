@@ -107,7 +107,7 @@ export default function Home() {
 
       <main className="overflow-hidden">
         {/* Hero Section */}
-        <section className="py-20 text-center bg-background bg-dotted">
+        <section className="py-16 text-center bg-background bg-dotted">
           <div className="container">
             <div className="space-y-6 md:space-y-8 md:py-20">
               <h1 className="text-4xl font-bold text-indigo-900 md:text-6xl">
