@@ -176,7 +176,7 @@ export default function Home() {
         {/* Features Section */}
         <section id="features" className="container py-16">
           <div className="container justify-center w-full mb-16 space-y-1 text-center max-w-fit">
-            <strong className="block text-center text-indigo-500">
+            <strong className="block text-center text-indigo-600">
               Our Features
             </strong>
             <h2 className="text-2xl font-bold text-center text-indigo-900 md:text-3xl">
@@ -224,7 +224,7 @@ export default function Home() {
         {/* Pricing Section */}
         <section id="pricing" className="container py-16 ">
           <div className="container justify-center w-full mb-16 space-y-1 text-center max-w-fit">
-            <strong className="block text-center text-indigo-500">
+            <strong className="block text-center text-indigo-600">
               Our Pricing
             </strong>
             <h2 className="text-2xl font-bold text-center text-indigo-900 md:text-3xl">
@@ -320,7 +320,7 @@ export default function Home() {
         {/* Testimonials Section */}
         <section id="testimonials" className="container py-16">
           <div className="container justify-center w-full mb-16 space-y-1 text-center max-w-fit">
-            <strong className="block text-center text-indigo-500">
+            <strong className="block text-center text-indigo-600">
               Our Testimonials
             </strong>
             <h2 className="text-2xl font-bold text-center text-indigo-900 md:text-3xl">
@@ -423,7 +423,7 @@ export default function Home() {
               },
             ].map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="font-semibold text-left text-indigo-700 md:text-base">
+                <AccordionTrigger className="font-semibold text-left text-indigo-600 md:text-base">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 md:text-base">
