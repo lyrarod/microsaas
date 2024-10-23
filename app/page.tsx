@@ -1,5 +1,9 @@
 "use client";
 import React from "react";
+
+import { motion } from "framer-motion";
+// import * as motion from "framer-motion/client";
+
 import ReactPlayer from "react-player/youtube";
 
 import { Button } from "@/components/ui/button";
@@ -25,8 +29,6 @@ import {
   Twitter,
   X,
 } from "lucide-react";
-
-import { Input } from "@/components/ui/input";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -109,7 +111,13 @@ export default function Home() {
         {/* Hero Section */}
         <section className="py-16 text-center bg-background bg-dotted">
           <div className="container">
-            <div className="space-y-6 md:space-y-8 md:py-20">
+            <motion.div
+              className="space-y-6 md:space-y-8 md:py-20"
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
               <h1 className="text-4xl font-bold text-indigo-900 md:text-6xl">
                 Simplify Your Workflow
               </h1>
@@ -119,9 +127,15 @@ export default function Home() {
               <Button className="bg-indigo-600 hover:bg-indigo-700">
                 Start Free Trial
               </Button>
-            </div>
+            </motion.div>
 
-            <div className="mt-14 md:mt-0 player-wrapper">
+            <motion.div
+              className="mt-14 md:mt-0 player-wrapper"
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.7, duration: 1 }}
+              viewport={{ once: true }}
+            >
               {isClient ? (
                 <ReactPlayer
                   className="react-player"
@@ -130,17 +144,21 @@ export default function Home() {
                   height="100%"
                   controls
                   loop
-                  // playing
-                  // muted
                 />
               ) : null}
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Brands Section */}
         <section className="py-12 bg-indigo-200">
-          <div className="container flex flex-col items-center justify-around space-y-4 md:space-y-0 lg:flex-row">
+          <motion.div
+            className="container flex flex-col items-center justify-around space-y-4 md:space-y-0 lg:flex-row"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <h2 className="mb-12 text-2xl font-bold text-indigo-900 lg:mb-0 md:text-4xl">
               {`Brands & Sponsors`}
             </h2>
@@ -170,12 +188,18 @@ export default function Home() {
                 title="Framer Motion"
               />
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Features Section */}
         <section id="features" className="container py-16">
-          <div className="container justify-center w-full mb-16 space-y-1 text-center max-w-fit">
+          <motion.div
+            className="container justify-center w-full mb-16 space-y-1 text-center max-w-fit"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <strong className="block text-center text-indigo-600">
               Our Features
             </strong>
@@ -186,7 +210,7 @@ export default function Home() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Necessitatibus, quibusdam!
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-16 md:pt-16 md:grid-cols-2 xl:grid-cols-3">
             {[
@@ -197,33 +221,44 @@ export default function Home() {
               { icon: Cog, label: "Custom AI Voices" },
               { icon: Image, label: "AI Image Generator" },
             ].map((feature, index) => (
-              <Card
+              <motion.div
                 key={index}
-                className="relative flex flex-col items-center text-center transition duration-300 hover:shadow-lg"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
               >
-                <div className="absolute top-0 flex items-center justify-center -translate-y-1/2 bg-indigo-700 rounded-full size-14">
-                  <feature.icon className="text-white size-6" />
-                </div>
-                <CardHeader className="flex items-center mt-6">
-                  <CardTitle className="text-xl font-semibold text-indigo-700">
-                    {feature.label}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </CardContent>
-              </Card>
+                <Card className="relative flex flex-col items-center text-center transition duration-300 hover:shadow-lg">
+                  <div className="absolute top-0 flex items-center justify-center -translate-y-1/2 bg-indigo-700 rounded-full size-14">
+                    <feature.icon className="text-white size-6" />
+                  </div>
+                  <CardHeader className="flex items-center mt-6">
+                    <CardTitle className="text-xl font-semibold text-indigo-700">
+                      {feature.label}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </section>
 
         {/* Pricing Section */}
         <section id="pricing" className="container py-16 ">
-          <div className="container justify-center w-full mb-16 space-y-1 text-center max-w-fit">
+          <motion.div
+            className="container justify-center w-full mb-16 space-y-1 text-center max-w-fit"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <strong className="block text-center text-indigo-600">
               Our Pricing
             </strong>
@@ -234,7 +269,7 @@ export default function Home() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Necessitatibus, quibusdam!
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-8 md:pt-16 lg:grid-cols-3">
             {[
@@ -275,51 +310,62 @@ export default function Home() {
                 ],
               },
             ].map((plan, index) => (
-              <Card
+              <motion.div
                 key={index}
-                className="transition duration-300 hover:shadow-lg"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
               >
-                <CardHeader>
-                  <CardTitle className="text-2xl font-semibold text-indigo-700">
-                    {plan.name}
-                  </CardTitle>
-                  <p className="text-4xl font-bold text-gray-800">
-                    {plan.price}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="mb-6 space-y-2">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-center">
-                        <svg
-                          className="w-5 h-5 mr-2 text-green-500"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="w-full bg-indigo-600 hover:bg-indigo-700">
-                    Choose Plan
-                  </Button>
-                </CardContent>
-              </Card>
+                <Card className="transition duration-300 hover:shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="text-2xl font-semibold text-indigo-700">
+                      {plan.name}
+                    </CardTitle>
+                    <p className="text-4xl font-bold text-gray-800">
+                      {plan.price}
+                    </p>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="mb-6 space-y-2">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-center">
+                          <svg
+                            className="w-5 h-5 mr-2 text-green-500"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button className="w-full bg-indigo-600 hover:bg-indigo-700">
+                      Choose Plan
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </section>
 
         {/* Testimonials Section */}
         <section id="testimonials" className="container py-16">
-          <div className="container justify-center w-full mb-16 space-y-1 text-center max-w-fit">
+          <motion.div
+            className="container justify-center w-full mb-16 space-y-1 text-center max-w-fit"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <strong className="block text-center text-indigo-600">
               Our Testimonials
             </strong>
@@ -330,7 +376,7 @@ export default function Home() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Necessitatibus, quibusdam!
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 md:pt-16">
             {[
@@ -377,28 +423,42 @@ export default function Home() {
                 img: "https://github.com/shadcn.png",
               },
             ].map((testimonial, index) => (
-              <Card key={index} className="transition hover:shadow-md">
-                <CardContent className="flex flex-col items-center justify-center pt-6 text-center">
-                  <Avatar>
-                    <AvatarImage src={testimonial.img} alt="@shadcn" />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                  <p className="my-2 text-gray-600">{`"${testimonial.quote}"`}</p>
-                  <strong className="text-indigo-700 ">
-                    {testimonial.name}
-                  </strong>
-                  <p className="text-sm text-gray-400">{testimonial.role}</p>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="transition hover:shadow-md">
+                  <CardContent className="flex flex-col items-center justify-center pt-6 text-center">
+                    <Avatar>
+                      <AvatarImage src={testimonial.img} alt="@shadcn" />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                    <p className="my-2 text-gray-600">{`"${testimonial.quote}"`}</p>
+                    <strong className="text-indigo-700 ">
+                      {testimonial.name}
+                    </strong>
+                    <p className="text-sm text-gray-400">{testimonial.role}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </section>
 
         {/* FAQ Section */}
         <section id="faq" className="container py-16">
-          <h2 className="mb-12 text-2xl font-bold text-center text-indigo-900 md:text-3xl">
+          <motion.h2
+            className="mb-12 text-2xl font-bold text-center text-indigo-900 md:text-3xl"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             Frequently Asked Questions
-          </h2>
+          </motion.h2>
           <Accordion type="single" collapsible className="container max-w-5xl">
             {[
               {
@@ -422,14 +482,22 @@ export default function Home() {
                   "Yes, we offer email support for all plans and priority support for Pro and Enterprise plans.",
               },
             ].map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="font-semibold text-left text-indigo-600 md:text-base">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-600 md:text-base">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.2 + index * 0.2, duration: 1 }}
+                viewport={{ once: true }}
+              >
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="font-semibold text-left text-indigo-600 md:text-base">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 md:text-base">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
         </section>
@@ -438,15 +506,27 @@ export default function Home() {
       {/* Footer */}
       <footer className="pt-8 text-white bg-indigo-900">
         <div className="container flex flex-col md:justify-between md:flex-row">
-          <div className="space-y-2 md:mb-0">
+          <motion.div
+            className="space-y-2 md:mb-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <a href="#" className="flex items-center gap-x-1 md:justify-normal">
               <CircuitBoard className="md:size-8" />
               <strong className="text-xl md:text-2xl">MicroSaaS</strong>
             </a>
             <p className="text-indigo-300">Simplify your workflow</p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col mt-8 space-y-2 md:mt-0">
+          <motion.div
+            className="flex flex-col mt-8 space-y-2 md:mt-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 1 }}
+            viewport={{ once: true }}
+          >
             <strong className="capitalize">our plans</strong>
             {["basic", "pro", "enterprise"].map((link, i) => {
               return (
@@ -459,9 +539,15 @@ export default function Home() {
                 </a>
               );
             })}
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col mt-8 space-y-2 md:mt-0">
+          <motion.div
+            className="flex flex-col mt-8 space-y-2 md:mt-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 1 }}
+            viewport={{ once: true }}
+          >
             <strong className="capitalize">support</strong>
             {["help center", "Privacy Policy", "Terms of Service"].map(
               (link, i) => {
@@ -476,9 +562,15 @@ export default function Home() {
                 );
               }
             )}
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col mt-8 space-y-2 md:mt-0">
+          <motion.div
+            className="flex flex-col mt-8 space-y-2 md:mt-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 1 }}
+            viewport={{ once: true }}
+          >
             <strong>Connect With Us</strong>
             <div className="flex gap-x-4">
               <a href="#">
@@ -494,12 +586,18 @@ export default function Home() {
                 <Linkedin className="text-indigo-300 transition hover:scale-110 hover:text-white" />
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="mt-8 text-indigo-300 border-t border-indigo-800 md:text-center">
-          <p className="container py-3 text-sm">
+          <motion.p
+            className="container py-3 text-sm"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 1 }}
+            viewport={{ once: true }}
+          >
             &copy; {new Date().getFullYear()} MicroSaaS. All rights reserved.
-          </p>
+          </motion.p>
         </div>
       </footer>
     </div>
