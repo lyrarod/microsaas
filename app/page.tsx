@@ -43,8 +43,8 @@ export default function Home() {
       <header className="sticky top-0 z-50 shadow bg-background/100 backdrop-blur">
         <nav className="container py-4">
           <div className="flex items-center justify-between w-full ">
-            <a href="#" className="flex items-center gap-x-1">
-              <CircuitBoard className="text-indigo-600 md:size-8" />
+            <a href="#" className="flex items-center text-indigo-600 gap-x-1">
+              <CircuitBoard className="md:size-8" />
               <strong className="text-xl md:text-2xl">MicroSaaS</strong>
             </a>
             <div className="items-center hidden md:flex gap-x-6">
@@ -54,7 +54,7 @@ export default function Home() {
                     <a
                       key={index}
                       href={`#${link}`}
-                      className="text-sm font-medium tracking-wider capitalize hover:text-indigo-700"
+                      className="text-sm font-medium tracking-wider capitalize hover:text-indigo-600"
                     >
                       {link}
                     </a>
@@ -88,7 +88,7 @@ export default function Home() {
                         key={index}
                         href={`#${link}`}
                         onClick={() => setMenuIsOpen(false)}
-                        className="capitalize hover:text-indigo-700"
+                        className="capitalize hover:text-indigo-600"
                       >
                         {link}
                       </a>
@@ -141,7 +141,7 @@ export default function Home() {
         {/* Brands Section */}
         <section className="py-12 bg-indigo-200">
           <div className="container flex flex-col items-center justify-around space-y-4 md:space-y-0 lg:flex-row">
-            <h2 className="mb-12 text-2xl font-bold lg:mb-0 md:text-4xl">
+            <h2 className="mb-12 text-2xl font-bold text-indigo-900 lg:mb-0 md:text-4xl">
               {`Brands & Sponsors`}
             </h2>
             <div className="grid grid-cols-2 gap-10 lg:gap-16 lg:grid-cols-4">
