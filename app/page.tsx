@@ -138,10 +138,10 @@ export default function Home() {
             >
               {isClient ? (
                 <ReactPlayer
-                  className="react-player"
+                  className="-translate-x-1/2 react-player left-1/2"
                   url="https://www.youtube.com/watch?v=huWbCLHHYgQ"
-                  width="100%"
-                  height="100%"
+                  width="90%"
+                  height="90%"
                   controls
                   loop
                 />
