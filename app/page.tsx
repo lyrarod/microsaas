@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-purple-100">
-      <header className="sticky top-0 z-50 shadow bg-background/100 backdrop-blur">
+      <header className="fixed top-0 z-50 w-full shadow bg-background/60 backdrop-blur">
         <nav className="container py-4">
           <div className="flex items-center justify-between w-full ">
             <a href="#" className="flex items-center text-indigo-600 gap-x-1">
@@ -109,7 +109,7 @@ export default function Home() {
 
       <main className="overflow-hidden">
         {/* Hero Section */}
-        <section className="py-16 text-center bg-background bg-dotted">
+        <section className="pt-32 pb-16 text-center bg-background bg-dotted">
           <div className="container">
             <motion.div
               className="space-y-6 md:space-y-8 md:py-20"
@@ -130,7 +130,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div
-              className="mt-14 md:mt-0 player-wrapper"
+              className="mt-10 md:mt-0 player-wrapper"
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.7, duration: 1 }}
